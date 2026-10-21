@@ -12,12 +12,7 @@ class HouseFeatures(BaseModel):
     rooms: int
     garden: int
 
-# 1. Endpoint GET (test initial)
-@app.get("/predict")
-def predict_get():
-    return {"y_pred": 2}
-
-# 3 & 4. Endpoint POST avec prédiction réelle
+# Endpoint POST avec prédiction réelle
 @app.post("/predict")
 def predict_post(features: HouseFeatures):
     data = [[features.size, features.rooms, features.garden]]
